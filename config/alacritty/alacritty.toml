@@ -1,0 +1,16 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+opacity = 0.90
+
+[font]
+size = 14
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[colors.primary]
+background = "#1e1e1e"
+foreground = "#ffffff"
