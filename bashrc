@@ -7,6 +7,4 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
-PS1='bugfibs \W '
-PS1='bugfibs \w > '
+PS1='\w $ '
