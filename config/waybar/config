@@ -1,0 +1,83 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 8,
+    
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["bluetooth", "network", "pulseaudio", "cpu", "memory", "battery"],
+    
+    "sway/workspaces": {
+        "format": "{icon}",
+	"format-icons": {
+	    "focused": "●",
+	    "urgent": "●",
+	    "default": "○"
+	},
+        "on-click": "activate",
+        "all-outputs": true,
+        "sort-by-number": true
+    },
+    
+    "clock": {
+        "interval": 1,
+        "format": "{:%a %d %H:%M}",
+        "tooltip": false
+    },
+    
+    "bluetooth": {
+        "format": "󰂲",
+        "format-disabled": "",
+        "format-off": "",
+        "format-connected": "",
+        "tooltip-format": "{controller_alias}",
+        "tooltip-format-connected": "{device_alias}"
+    },
+    
+    "network": {
+        "interface": "wlp*",
+        "format-wifi": "{icon}",
+        "format-ethernet": "",
+        "format-disconnected": "󰤭",
+        "format-icons": ["󰤟", "󰤥", "󰤨"],
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "nm-connection-editor"
+    },
+    
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+    
+    "cpu": {
+        "interval": 2,
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+    
+    "memory": {
+        "interval": 2,
+        "format": "  {percentage}%",
+        "tooltip": false
+    },
+    
+    "battery": {
+	"bat": "BAT0",
+	"adapter": "AC",
+        "interval": 5,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󱐋 {capacity}%",
+        "format-full": " {capacity}%",
+        "format-icons": ["󱉝", "", "", "", ""],
+        "tooltip": false
+    }
+}
