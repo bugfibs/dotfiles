@@ -8,3 +8,11 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='\w $ '
+
+# opencode
+export PATH=/home/bugfibs/.opencode/bin:$PATH
+
+# editor
+
+export EDITOR=nvim
+export PATH="$HOME/.local/bin:$PATH"
