@@ -13,6 +13,7 @@ PS1='\w $ '
 export PATH=/home/bugfibs/.opencode/bin:$PATH
 
 # editor
-
 export EDITOR=nvim
 export PATH="$HOME/.local/bin:$PATH"
+
+eval "$(starship init bash)"
