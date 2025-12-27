@@ -2,10 +2,8 @@ configuration {
     display-drun: " ";
     drun-display-format: "{icon} {name}";
     modi: "drun,ssh,run";
-    font: "FiraCodeNerdFont 12";
-    show-icons: false;
+    show-icons: true;
     icon-theme: "Papirus";
 }
 
-@theme "squared-nord"
-
+@theme "/home/bugfibs/.local/share/rofi/themes/mycustom.rasi"

@@ -1,12 +1,14 @@
+/* ROFI SQUARED THEME USING THE NORD PALETTE  */
+/* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
     font:   "FiraCode Nerd Font Medium 12";
 
-    bg0:     #1a1a1a;
-    bg1:     #000000;
+    bg0:     #2E3440;
+    bg1:     #3B4252;
     fg0:     #D8DEE9;
 
-    accent-color:     #3B4252;
+    accent-color:     #88C0D0;
     urgent-color:     #EBCB8B;
 
     background-color:   transparent;
@@ -19,14 +21,14 @@
 
 window {
     location:   center;
-    width:      30%;
+    width:      480;
 
     background-color:   @bg0;
 }
 
 inputbar {
-    spacing:    14px;
-    padding:    14px;
+    spacing:    8px;
+    padding:    8px;
 
     background-color:   @bg1;
 }
@@ -46,7 +48,7 @@ textbox {
 
 listview {
     padding:    4px 0;
-    lines:      4;
+    lines:      8;
     columns:    1;
 
     fixed-height:   false;
@@ -74,7 +76,7 @@ element alternate active {
 }
 
 element selected {
-    text-color: @fg0;
+    text-color: @bg0;
 }
 
 element selected normal, element selected active {
@@ -86,7 +88,7 @@ element selected urgent {
 }
 
 element-icon {
-    size:   2.0em;
+    size:   0.8em;
 }
 
 element-text {

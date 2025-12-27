@@ -1,83 +1,92 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 32,
-    "spacing": 8,
-    
-    "modules-left": ["sway/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["bluetooth", "network", "pulseaudio", "cpu", "memory", "battery"],
-    
-    "sway/workspaces": {
-        "format": "{icon}",
-	"format-icons": {
-	    "focused": "●",
-	    "urgent": "●",
-	    "default": "○"
-	},
-        "on-click": "activate",
-        "all-outputs": true,
-        "sort-by-number": true
-    },
-    
-    "clock": {
-        "interval": 1,
-        "format": "{:%a %d %H:%M}",
-        "tooltip": false
-    },
-    
-    "bluetooth": {
-        "format": "󰂲",
-        "format-disabled": "",
-        "format-off": "",
-        "format-connected": "",
-        "tooltip-format": "{controller_alias}",
-        "tooltip-format-connected": "{device_alias}"
-    },
-    
-    "network": {
-        "interface": "wlp*",
-        "format-wifi": "{icon}",
-        "format-ethernet": "",
-        "format-disconnected": "󰤭",
-        "format-icons": ["󰤟", "󰤥", "󰤨"],
-        "tooltip-format": "{essid} ({signalStrength}%)",
-        "on-click": "nm-connection-editor"
-    },
-    
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "on-click": "pavucontrol"
-    },
-    
-    "cpu": {
-        "interval": 2,
-        "format": "  {usage}%",
-        "tooltip": false
-    },
-    
-    "memory": {
-        "interval": 2,
-        "format": "  {percentage}%",
-        "tooltip": false
-    },
-    
-    "battery": {
-	"bat": "BAT0",
-	"adapter": "AC",
-        "interval": 5,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󱐋 {capacity}%",
-        "format-full": " {capacity}%",
-        "format-icons": ["󱉝", "", "", "", ""],
-        "tooltip": false
+  "layer": "top",
+  "position": "top",
+  "height": 35,
+  "modules-left": ["sway/workspaces"],
+
+  "modules-center": ["clock", "sway/mode"],
+
+  "modules-right": [
+    "pulseaudio",
+    "battery",
+    "network",
+    "cpu",
+    "memory",
+  ],
+
+  "sway/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "focused": "",
+      "default": ""
     }
+  },
+
+  "sway/mode": {
+  "format": "<span style=\"italic\">  {}</span>",
+  "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+
+  "custom/music": {
+    "format": "  {}",
+    "escape": true,
+    "interval": 5,
+    "tooltip": false,
+    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+    "on-click": "playerctl play-pause",
+    "max-length": 50
+  },
+
+  "clock": {
+    "timezone": "America/New_York",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%b %d - %H:%M}",
+    "interval": 5
+  },
+
+  "network": {
+    "format-wifi": "󰤢 {bandwidthDownBits}",
+    "format-ethernet": "󰈀 {bandwidthDownBits}",
+    "format-disconnected": "󰤠 No Network",
+    "interval": 5,
+    "tooltip": false
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "  {used:0.1f}G/{total:0.1f}G"
+  },
+
+  "custom/uptime": {
+    "format": "{}",
+    "interval": 1600,
+    "exec": "sh -c '(uptime -p)'"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "wlogout &",
+    "format": "⏻"
+  },
+
 }

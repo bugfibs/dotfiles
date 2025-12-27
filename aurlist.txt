@@ -1,0 +1,6 @@
+1password
+ly-debug
+opencode-bin
+paru
+yay-debug
+zen-browser-bin
