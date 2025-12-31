@@ -1,17 +1,18 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 35,
+  "height": 40,
   "modules-left": ["sway/workspaces"],
 
-  "modules-center": ["clock", "sway/mode"],
+  "modules-center": ["clock"],
 
   "modules-right": [
+    "sway/mode",
     "pulseaudio",
-    "battery",
     "network",
     "cpu",
     "memory",
+    "battery",
   ],
 
   "sway/workspaces": {
@@ -50,8 +51,8 @@
   },
 
   "network": {
-    "format-wifi": "󰤢 {bandwidthDownBits}",
-    "format-ethernet": "󰈀 {bandwidthDownBits}",
+    "format-wifi": "󰤢 ",
+    "format-ethernet": "󰈀",
     "format-disconnected": "󰤠 No Network",
     "interval": 5,
     "tooltip": false

@@ -1,140 +1,232 @@
+add_newline = false
+
+format = """
+$character\
+$directory\
+$git_branch\
+$git_status"""
+
+[character]
+success_symbol = "[➜](#00bcd4) "
+error_symbol = "[✗](#00bcd4) "
+format = "$symbol"
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+format = "[$path]($style) "
+style = "#5d606b"
+
+[git_branch]
+format = "[git:](#5b3f8f)[\\(](#5b3f8f)[$branch](bold red)[\\)](#5b3f8f) "
+symbol = ""
+style = "bold red"
+
+[git_status]
+format = "[$all_status$ahead_behind]($style) "
+style = "#f9e2af"
+
+# Disable all other modules
 [cmd_duration]
 disabled = true
 
+[aws]
+disabled = true
+
+[azure]
+disabled = true
+
+[battery]
+disabled = true
+
 [buf]
-format = '(with [$symbol($version )]($style))'
+disabled = true
 
 [bun]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [c]
-format = '(via [$symbol($version(-$name) )]($style))'
-
-[cpp]
-format = '(via [$symbol($version(-$name) )]($style))'
+disabled = true
 
 [cmake]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [cobol]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[conda]
+disabled = true
+
+[container]
+disabled = true
 
 [crystal]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [daml]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [dart]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [deno]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[docker_context]
+disabled = true
 
 [dotnet]
-format = '(via [$symbol($version )(🎯 $tfm )]($style))'
+disabled = true
 
 [elixir]
-format = '(via [$symbol($version \(OTP $otp_version\) )]($style))'
+disabled = true
 
 [elm]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [erlang]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [fennel]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [fortran]
-format = "(via [$symbol($version )]($style))"
+disabled = true
+
+[gcloud]
+disabled = true
 
 [gleam]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [golang]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[gradle]
+disabled = true
+
+[guix_shell]
+disabled = true
 
 [haskell]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[haxe]
+disabled = true
 
 [helm]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[hostname]
+disabled = true
 
 [java]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [julia]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [kotlin]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[kubernetes]
+disabled = true
 
 [lua]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[memory_usage]
+disabled = true
+
+[meson]
+disabled = true
 
 [nim]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[nix_shell]
+disabled = true
 
 [nodejs]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [ocaml]
-format = '(via [$symbol($version )(\($switch_indicator$switch_name\) )]($style))'
+disabled = true
 
 [opa]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[openstack]
+disabled = true
 
 [package]
-format = '(is [$symbol$version]($style) )'
+disabled = true
 
 [perl]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [php]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[pulumi]
+disabled = true
 
 [purescript]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [python]
-format = '(via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style))'
+disabled = true
 
 [quarto]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [raku]
-format = '(via [$symbol($version-$vm_version )]($style))'
+disabled = true
 
 [red]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [rlang]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [ruby]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [rust]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [scala]
-format = '(via [$symbol($version )]($style))'
+disabled = true
+
+[singularity]
+disabled = true
+
+[spack]
+disabled = true
+
+[sudo]
+disabled = true
 
 [swift]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
-[typst]
-format = '(via [$symbol($version )]($style))'
+[terraform]
+disabled = true
+
+[time]
+disabled = true
+
+[username]
+disabled = true
 
 [vagrant]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
 [vlang]
-format = '(via [$symbol($version )]($style))'
+disabled = true
 
-[xmake]
-format = '(via [$symbol($version )]($style))'
+[vcsh]
+disabled = true
 
 [zig]
-format = '(via [$symbol($version )]($style))'
+disabled = true
