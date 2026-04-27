@@ -7,8 +7,8 @@ $git_branch\
 $git_status"""
 
 [character]
-success_symbol = "[➜](#00bcd4) "
-error_symbol = "[✗](#00bcd4) "
+success_symbol = '[\$](#00bcd4) '
+error_symbol = '[\$](#00bcd4) '
 format = "$symbol"
 
 [directory]
