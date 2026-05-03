@@ -1,15 +1,28 @@
 add_newline = false
-
 format = """
 $character\
-$directory\
 $git_branch\
-$git_status"""
+$git_status\
+$directory"""
 
 [character]
-success_symbol = '[\$](#00bcd4) '
-error_symbol = '[\$](#00bcd4) '
+success_symbol = '[→](#00bcd4) '
+error_symbol = '[→](#00bcd4) '
 format = "$symbol"
+
+[git_status]
+format = "[$all_status$ahead_behind]($style) "
+style = "#f9e2af"
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+stashed = "≡"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
 
 [directory]
 truncation_length = 3
@@ -18,13 +31,9 @@ format = "[$path]($style) "
 style = "#5d606b"
 
 [git_branch]
-format = "[git:](#5b3f8f)[\\(](#5b3f8f)[$branch](bold red)[\\)](#5b3f8f) "
+format = "[$symbol](#cba6f7)[$branch](bold #cba6f7) "
 symbol = ""
-style = "bold red"
-
-[git_status]
-format = "[$all_status$ahead_behind]($style) "
-style = "#f9e2af"
+style = "bold #cba6f7"
 
 # Disable all other modules
 [cmd_duration]
