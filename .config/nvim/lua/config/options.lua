@@ -54,5 +54,8 @@ vim.o.inccommand = "split"
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 
+-- Keep block cursor in all modes
+vim.opt.guicursor = ""
+
 -- Confirm dialog instead of failing on unsaved changes
 vim.o.confirm = true

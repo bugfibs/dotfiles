@@ -93,20 +93,22 @@ return {
             [vim.diagnostic.severity.HINT] = "󰌶 ",
           },
         } or {},
-        virtual_text = {
-          source = "if_many",
-          spacing = 2,
-          format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
-          end,
-        },
+        virtual_text = false,
       })
+
+      -- Background tint on diagnostic spans
+      local function set_diagnostic_hl()
+        vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { bg = "#3a2222", undercurl = true, sp = "#eb6f92" })
+        vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { bg = "#3a3222", undercurl = true, sp = "#f6c177" })
+        vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { bg = "#22303a", undercurl = true, sp = "#9ccfd8" })
+        vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { bg = "#22322a", undercurl = true, sp = "#c4a7e7" })
+      end
+
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = set_diagnostic_hl,
+      })
+
+      set_diagnostic_hl() -- apply now in case the colorscheme already loaded
 
       local capabilities = require("blink.cmp").get_lsp_capabilities()
 

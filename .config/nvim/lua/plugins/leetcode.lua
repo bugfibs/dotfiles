@@ -8,7 +8,9 @@ return {
       "nvim-telescope/telescope.nvim",
     },
     opts = {
-      lang = "python3",
+      -- lang = "python3",
+      lang = "java",
+      non_standalone = true,
     },
   },
 }

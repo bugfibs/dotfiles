@@ -65,6 +65,9 @@ return {
             visible = false,
             hide_dotfiles = false,
             hide_gitignored = false,
+            hide_by_pattern = {
+              "*.class",
+            },
           },
         },
 

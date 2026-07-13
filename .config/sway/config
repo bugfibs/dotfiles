@@ -53,7 +53,7 @@ bindsym $mod+Shift+$right move right
 
 
 # Split orientation
-bindsym $mod+backslash split h
+bindsym $mod+z split h
 bindsym $mod+v split v
 
 # Fullscreen
@@ -111,9 +111,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # Reload config and restart waybar
 bindsym $mod+Shift+r exec killall waybar; reload
 
-# Exit sway
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
-
 # Resize mode
 mode "resize" {
         bindsym $left       resize shrink width 10 px or 10 ppt
@@ -154,7 +151,7 @@ client.urgent           #ff0000 #ff0000 #ffffff #ff0000  #ff0000
 
 
 # Wallpaper
-output * bg ~/Pictures/wallpapers/wallhaven-o39z7m_1920x1080.png fill
+output * bg ~/Pictures/wallpapers/image.webp fill
 
 # Rofi scripts
 bindsym $mod+Shift+w exec ~/.local/bin/rofi-wifi-menu.sh

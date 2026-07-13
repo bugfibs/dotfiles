@@ -29,12 +29,35 @@ return {
           section_separators = "",
         },
         sections = {
-          lualine_a = { "mode" },
-          lualine_b = { "branch" },
-          lualine_c = { "filename", "diagnostics" },
-          lualine_x = { "encoding" },
+          lualine_a = {
+            {
+              "mode",
+              fmt = function(str)
+                local map = {
+                  NORMAL = "N",
+                  INSERT = "I",
+                  VISUAL = "V",
+                  ["V-LINE"] = "VL",
+                  ["V-BLOCK"] = "VB",
+                  SELECT = "S",
+                  ["S-LINE"] = "SL",
+                  ["S-BLOCK"] = "SB",
+                  REPLACE = "R",
+                  ["V-REPLACE"] = "VR",
+                  COMMAND = "C",
+                  EX = "EX",
+                  TERMINAL = "T",
+                  ["O-PENDING"] = "OP",
+                }
+                return map[str] or str
+              end,
+            },
+          },
+          lualine_b = { "filename" },
+          lualine_c = {},
+          lualine_x = {},
           lualine_y = { "filetype" },
-          lualine_z = { "progress", "location" },
+          lualine_z = { "location", "progress" },
         },
       })
     end,
